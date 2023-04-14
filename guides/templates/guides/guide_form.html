@@ -1,0 +1,21 @@
+{% extends 'guides/base.html' %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Сохранить">
+    </form>
+
+    {% if guide %}
+        <a href="{% url 'guide_detail' guide.id %}">
+            <button>Отменить</button>
+        </a>
+    {% else %}
+        <a href="{% url 'guides_list' %}">
+            <button>Отменить</button>
+        </a>
+    {% endif %}
+
+{% endblock  %}

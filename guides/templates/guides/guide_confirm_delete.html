@@ -1,0 +1,18 @@
+{% extends 'guides/base.html' %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            Вы действительно хотите удалить
+            "{{ guide.title }}"
+            созданную {{ guide.date_created|date:"Y-m-d" }}?
+        </p>
+        <input type="submit" value="Да">
+    </form>
+    <a href="{% url 'guide-detail' guide.id %}">
+        <button>Отменить</button>
+    </a>
+
+{% endblock  %}

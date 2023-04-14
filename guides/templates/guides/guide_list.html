@@ -1,0 +1,22 @@
+{% extends 'guides/base.html' %}
+
+{% block content %}
+
+{% for guide in guide_list %}
+
+<article>
+
+    <h2 class="{{ guide.date_created|date:'l' }}">
+        {{ guide.date_created|date:'Y-m-d H:i'}}
+    </h2>
+
+    <h3>
+        <a href="{% url 'guide_detail' guide.id %}">
+            {{ guide.title }}
+        </a>
+    </h3>
+
+</article>
+
+{% endfor %}
+{% endblock %}

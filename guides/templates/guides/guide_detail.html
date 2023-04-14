@@ -1,0 +1,13 @@
+{% extends 'guides/base.html' %}
+
+{% block content %}
+
+<article>
+
+    <h2>{{ guide.date_created|date:'Y-m-d H:i' }}</h2>
+    <h3>{{ guide.title }}</h3>
+    <p>{{ guide.content }}</p>
+
+</article>
+
+{% endblock  %}
